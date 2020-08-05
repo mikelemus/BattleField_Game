@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Salvo!</title>
+</head>
+
+<body>
+   
+   <div class="header" >
+    <h1><strong> BattleShip Game</strong>
+       
+    </h1>
+</div>
+    <div class="container" id="app">
+
+        <div class="row buttons">
+
+            <div v-if="player == null" class="col-9 login">
+
+                <label>Email:</label>
+                <input type="text" v-model:value="userEmail">
+
+                <label>Password:</label>
+                <input type="password" v-model:value="userPassword">
+
+
+
+                <button type="button" class="btn btn-warning" v-on:click="singUp">SignUp</button>
+                <button type="button" class="btn btn-warning" v-on:click="loginEmail">Login</button>
+
+
+
+            </div>
+
+            <div v-if="player !== null" class="col-6 text-left botonEspacio">
+                <button type="button" class="btn btn-warning" v-on:click="createGame">Create Game</button>
+
+            </div>
+            <div v-if="player !== null" class="col-6 text-right botonEspacio">
+                <button type="button" class="btn btn-warning" v-on:click="logOut">LogOut</button>
+            </div>
+
+
+
+
+
+        </div>
+
+
+        <div class="row ">
+
+            <div class="col-6 ">
+
+                <h1> Total Games </h1>
+
+                <div>
+                    <div class="col ">
+
+                        <table class="table">
+                            <tbody>
+                                <tr v-for="game in games">
+                                    <td> {{ game.created | dateFormat}}</td>
+                                    <td v-for="gamePlayer in game.gamePlayers">{{"Player id:"}} {{gamePlayer.player.id}} <br>{{"Player username:"}} {{gamePlayer.player.username}} </td>
+                                    <td>
+                                        <button v-if="identPlayer(game)" type="button" class="btn btn-outline-warning" v-on:click="gameView(game)">Return</button>
+
+                                        <button v-if="player !== null && game.gamePlayers.length < 2 && game.gamePlayers.findIndex(findUser) == -1 " type="button" class="btn btn-outline-warning" v-on:click="joinGame(game.id)">Join</button>
+
+
+
+                                    </td>
+
+                                </tr>
+                            </tbody>
+
+
+                        </table>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div class="col">
+                <div class="col-6">
+
+                    <h1>Top Scores</h1>
+
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th> Player </th>
+                                <th> Total </th>
+                                <th> Win </th>
+                                <th> Lost </th>
+                                <th> Tied </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="item in Scores">
+                                <td>{{ item.player }}</td>
+                                <td>{{ item.total }}</td>
+                                <td>{{ item.win }}</td>
+                                <td>{{ item.lost }}</td>
+                                <td>{{ item.tied }}</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+    <script src="games.js"></script>
+    <script src="moment.js"></script>
+</body>
+
+</html>

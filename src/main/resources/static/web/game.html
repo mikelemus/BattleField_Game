@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gridstack@0.6.0/dist/gridstack.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gridstack@0.6.0/dist/gridstack-extra.css" />
+    <link rel="stylesheet" href="style.css">
+
+
+
+    <title>Ship Locations</title>
+</head>
+
+<body>
+
+<div class="header" >
+    <h1><strong> BattleShip Game</strong>
+       
+    </h1>
+</div>
+
+
+    <div class="container" id="app">
+
+        
+ <div class="row logOut">
+            <div class="col-4 botonEspacio text-left"> 
+                <button v-if="datosJs.State == 'WAITING_SHIPS'" type="button" class="btn btn-outline-warning" v-on:click="createShips">Ships </button>
+            </div>
+
+          <div class="col-4 botonEspacio text-right">
+                    <button v-if="datosJs.State == 'PLAY'  " type="button" class="btn btn-outline-warning" v-on:click="sendSalvos">Send Salvos</button>
+                </div>
+            <div class="col-4 botonEspacio text-right">
+                <button type="button" class="btn btn-warning" v-on:click="logOut">LogOut</button>
+            </div>
+           
+           
+                
+
+            
+
+        </div>
+
+        <div class="row">
+            <div class="col-8">
+                <table class="table table-bordered">
+                    <tr id="texto">
+                        <td>
+                            <h5 class="textoColor5">{{viewer.username}}
+                                {{"|"}} {{opponent.username}}</h5>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+
+            <div class="col-3 ">
+               
+                <table class=" table  table-bordered">
+
+                    <tr>
+                        <td class="stateColor"><p><strong>State:</strong>
+                        <strong>{{ datosJs.State }}</strong></p></td>
+                    </tr>
+
+                </table>
+
+            </div>
+        </div>
+
+
+
+
+        <div class="row ">
+            <div class="col-12 col-md-6">
+                <div class="grid-ships ">
+                    <div id="grid-stack" class="grid-stack grid-stack-10">
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-12 col-md-6 ">
+
+
+                <table class="table table-bordered grid-salvos">
+                    <tr>
+                        <td></td>
+                        <td v-for="n in num"><strong>{{n}}</strong></td>
+                    </tr>
+                    <tr v-for="item in abc">
+                        <td><strong>{{ item }}</strong></td>
+                        <td v-on:click="createSalvo(item+n)" v-bind:id="item+n+'s'" v-for="n in num"></td>
+                    </tr>
+
+
+                </table>
+
+
+
+
+            </div>
+        </div>
+
+
+        <div class="row ">
+            <div class="col-3 jj text-center">
+                <p><strong>Sink Boats:</strong></p>
+                <table class=" table ">
+
+                    <tr v-for="item in datosJs.Sinks">
+                        <td><strong>{{ item }}</strong></td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gridstack@0.6.0/dist/gridstack.all.js"></script>
+    <script src="game.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

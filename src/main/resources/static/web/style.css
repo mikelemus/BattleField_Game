@@ -1,0 +1,191 @@
+.buttons {
+    margin-left: 30px;
+    margin-right: 5px;
+    margin-top: 20px;
+}
+
+
+.celdaColors {
+    background-color: #E6AF2E;
+}
+
+#texto {
+
+
+
+    text-align: center;
+}
+
+.jj {
+
+
+    padding: 5px;
+    margin: 5px;
+    border-radius: 20px;
+    background-color: #9B1D20;
+    border: solid 1px black;
+    color: white;
+    width: 100%;
+    margin: auto;
+}
+
+body {
+    background-image:url(pawel-nolbert-xe-ss5Tg2mo-unsplash.jpg);
+}
+
+.stateColor {
+
+    color: burlywood;
+}
+
+#cuadrado {
+    border: 2px solid black;
+}
+
+.container {
+
+    margin-top: 30px;
+}
+
+.logOut {
+
+    margin-top: 10px;
+
+}
+
+.grid2 {
+    border: solid black;
+    height: 450px;
+    width: 450px;
+}
+
+
+
+
+
+.grid-stack-item-content {
+
+    opacity: 0.9;
+    background-repeat: no-repeat;
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+    left: 0px !important;
+}
+
+.carrierHorizontal {
+    background-image: url('boats/carrierhor.png');
+    background-size: contain;
+
+
+}
+
+.patrolHorizontal {
+    background-image: url('boats/patrolboathor.png');
+    background-size: contain;
+
+
+
+}
+
+.submarineHorizontal {
+    background-image: url('boats/submarinehor.png');
+    background-size: 100% 100%;
+}
+
+.destroyerHorizontal {
+
+    background-image: url('boats/destroyerhor.png');
+    background-size: 100% 100%;
+
+}
+
+.battleshipHorizontal {
+    background-image: url('boats/battleshiphor.png');
+    background-size: 100% 100%;
+
+}
+
+.carrierVertical {
+    background-image: url('boats/carrierver.png');
+    background-size: contain;
+    width: 45px !important;
+
+
+}
+
+.patrolVertical {
+    background-image: url('boats/patrolboatver.png');
+    background-size: contain;
+    width: 45px !important;
+}
+
+.submarineVertical {
+    background-image: url('boats/submarinever.png');
+    background-size: 100% 100%;
+    width: 45px !important;
+}
+
+.destroyerVertical {
+
+    background-image: url('boats/destroyerver.png');
+    background-size: 100% 100%;
+    width: 45px !important;
+}
+
+.battleshipVertical {
+    background-image: url('boats/battleshipver.png');
+    background-size: 100% 100%;
+    width: 45px !important;
+}
+
+.grid-ships {
+
+    border: solid black;
+    height: 450px;
+    width: 450px;
+    background-image: url(boats/grid-bkg.png);
+    background-size: cover;
+    padding-left: 42px;
+    padding-top: 42px;
+
+
+}
+
+.grid-salvos {
+    border: solid black;
+    height: 450px;
+    width: 450px;
+
+}
+
+.table td,
+.table th {
+    padding: 10px 0px 0px 10px;
+}
+
+.celdaColor {
+    background-color: #E6AF2E;
+}
+
+.celdaSalvo {
+    background-color: cornflowerblue;
+}
+
+.celdaRoja {
+    background-color: darkred;
+}
+
+.header {
+      margin-top: 30px;
+    font-family: monospace;
+    text-align: center;
+
+}
+.textoColor5{
+    color:darkgoldenrod;
+}
+.botonEspacio{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+}
